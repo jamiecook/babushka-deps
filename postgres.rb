@@ -1,5 +1,5 @@
 dep 'existing postgres db', :username, :db_name do
-  requires 'postgres access'.with(:username => username)
+  requires 'benhoskings:postgres access'.with(:username => username)
   met? {
     !shell("psql -l") {|shell|
       shell.stdout.split("\n").grep(/^\s*#{db_name}\s+\|/)
